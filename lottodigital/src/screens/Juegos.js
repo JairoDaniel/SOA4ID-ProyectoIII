@@ -1,3 +1,8 @@
+/**
+ * @author Jairo Ortega Calderón
+ * @version 1.0
+ * @date 21-11-2019
+ */
 import React, { Component } from 'react'
 import {
   StyleSheet,
@@ -12,7 +17,11 @@ import RNPickerSelect from 'react-native-picker-select'
 
 import Fondo from '../../assets/imagenes/fondo.jpg'
 
-export default class PuntosVenta extends Component {
+
+/**
+ * @class Clase para generar la ventana de los juegos de lotería
+ */
+export default class Juegos extends Component {
   constructor () {
     super()
     this.state = {
@@ -28,6 +37,11 @@ export default class PuntosVenta extends Component {
       value: null,
       fontSize: 18
     }
+    /**
+        * ImageBackground:Imagen de fondo en la ventana
+        * RNPickerSelect: Crea el elemento para crear opciones que se desplegan
+        * TouchableOpacity: Botón
+        */
     return (
       <ImageBackground source={Fondo} style={styles.imageBack}>
         <View style={styles.MainContainer}>
@@ -82,7 +96,9 @@ export default class PuntosVenta extends Component {
     )
   }
 }
-
+/**
+ * Estilos para darle formato a la ventana
+ */
 const styles = StyleSheet.create({
   MainContainer: {
     justifyContent: 'center',

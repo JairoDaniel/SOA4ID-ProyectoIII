@@ -1,3 +1,8 @@
+/**
+ * @author Jairo Ortega Calderón
+ * @version 1.0
+ * @date 21-11-2019
+ */
 import * as React from 'react'
 import {
   Text,
@@ -10,6 +15,9 @@ import {
 
 import Fondo from '../../assets/imagenes/fondo.jpg'
 
+/**
+ * @class Clase para generar la ventana del perfil de usuario
+ */
 export default class Perfil extends React.Component {
   constructor () {
     super()
@@ -22,7 +30,7 @@ export default class Perfil extends React.Component {
       carteraVirtual: '4500'
     }
   }
-
+  //Método para montar externos
   componentDidMount () {
     var that = this
     let items = Array.apply(null, Array(1)).map((v, i) => {
@@ -35,6 +43,11 @@ export default class Perfil extends React.Component {
   }
 
   render () {
+    /**
+      * ImageBackground:Imagen de fondo en la ventana
+      * FlatList: Crea un elemento "Matriz" para poner las opciones del usuario
+      * TouchableOpacity: Botón
+      */
     return (
       <ImageBackground source={Fondo} style={styles.imageBack}>
         <View style={styles.MainContainer}>
@@ -94,7 +107,9 @@ export default class Perfil extends React.Component {
     )
   }
 }
-
+/**
+ * Estilos para darle formato a la ventana
+ */
 const styles = StyleSheet.create({
   MainContainer: {
     justifyContent: 'center',

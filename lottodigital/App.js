@@ -1,8 +1,11 @@
-import createStackNavigator from 'react-navigation-stack'
-import {
-  createAppContainer, 
-  createSwitchNavigator 
-} from 'react-navigation'
+/**
+ * @author Jairo Ortega Calderón
+ * @version 1.0
+ * @date 21-11-2019
+ */
+
+import { createStackNavigator } from 'react-navigation-stack'
+import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 
 import * as firebase from 'firebase'
 
@@ -17,8 +20,12 @@ import PuntosVentaScreen from './src/screens/PuntosVenta.js'
 import JuegosScreen from './src/screens/Juegos.js'
 import InicialScreen from './src/screens/Inicial.js'
 
+//Inicializa FIrebase
 firebase.initializeApp(Constants.FirebaseConfig)
 
+/**
+ * Stack para las ventanas una vez que se ingresa al sistema
+ */
 const appStack = createStackNavigator({
   Home: {
     navigationOptions: {
@@ -72,6 +79,9 @@ const appStack = createStackNavigator({
   }
 })
 
+/**
+ * Stack para las ventanas de sesión
+ */
 const authStack = createStackNavigator({
   Incial: {
     navigationOptions: {
@@ -105,6 +115,9 @@ const authStack = createStackNavigator({
   }
 })
 
+/**
+ * Contenedor de los stacks
+ */
 export default createAppContainer(
   createSwitchNavigator(
     {

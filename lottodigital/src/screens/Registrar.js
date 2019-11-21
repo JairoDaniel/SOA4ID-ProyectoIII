@@ -12,6 +12,10 @@ import * as firebase from 'firebase'
 
 import Fondo from '../../assets/imagenes/fondo.jpg'
 
+/**
+ * @class Clase para generar la ventana de registro de nuevo usuario
+ *  Esta clase está basada en el taller de Firebase: https://github.com/KJeanpol/LoginReactFirebase
+ */
 export default class Registrar extends React.Component {
   constructor (props) {
     super(props)
@@ -67,6 +71,12 @@ export default class Registrar extends React.Component {
   }
 
   render () {
+
+      /**
+        * ImageBackground:Imagen de fondo en la ventana
+        * TextInput: Entrada de datos.
+        * TouchableOpacity: Botones
+        */
     return (
       <ImageBackground source={Fondo} style={styles.imageBack}>
         <View style={styles.container}>
@@ -127,7 +137,9 @@ export default class Registrar extends React.Component {
     )
   }
 }
-
+/**
+ * Estilos para darle formato a la ventana
+ */
 const styles = StyleSheet.create({
   container: {
     flex: 1,

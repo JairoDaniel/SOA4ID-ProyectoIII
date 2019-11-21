@@ -1,3 +1,8 @@
+/**
+ * @author Jairo Ortega Calderón
+ * @version 1.0
+ * @date 21-11-2019
+ */
 import React from 'react'
 import {
   TextInput,
@@ -12,6 +17,10 @@ import * as firebase from 'firebase'
 
 import Fondo from '../../assets/imagenes/fondo.jpg'
 
+/**
+ * @class Clase para generar la ventana de inicio de sesión
+ * Esta clase está basada en el taller de Firebase: https://github.com/KJeanpol/LoginReactFirebase
+ */
 export default class Ingresar extends React.Component {
   constructor (props) {
     super(props)
@@ -21,7 +30,9 @@ export default class Ingresar extends React.Component {
       errorMessage: null
     }
   }
-
+  /**
+   * Método iniciar sesión del usuario en Firebase 
+   */
   handleLogin = () => {
     const { cedula, contrasena } = this.state
 
@@ -31,11 +42,12 @@ export default class Ingresar extends React.Component {
       .catch(error => this.setState({ errorMessage: error.message }))
   }
 
-  _UserLog (pced, pcon) {
-    alert('Cedula:' + pced + '@Test.com' + 'Contrasena: ' + pcon)
-  }
-
   render () {
+    /**
+    * ImageBackground:Imagen de fondo en la ventana
+    * FlatList: Crea un elemento "Lista" vertical para insertar las transacciones realizadas
+    * TouchableOpacity: Botón
+    */
     return (
       <ImageBackground source={Fondo} style={styles.imageBack}>
         <View style={styles.container}>
@@ -66,7 +78,6 @@ export default class Ingresar extends React.Component {
               Ingresar al sistema
             </Text>
           </TouchableOpacity>
-
           <TouchableOpacity
             style={{ alignSelf: 'center', marginTop: 32 }}
             onPress={() => this.props.navigation.navigate('Registrar')}
@@ -83,7 +94,9 @@ export default class Ingresar extends React.Component {
     )
   }
 }
-
+/**
+ * Estilos para darle formato a la ventana
+ */
 const styles = StyleSheet.create({
   container: {
     flex: 1,

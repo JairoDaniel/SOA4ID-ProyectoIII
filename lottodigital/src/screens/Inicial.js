@@ -1,3 +1,8 @@
+/**
+ * @author Jairo Ortega Calderón
+ * @version 1.0
+ * @date 21-11-2019
+ */
 import React, { Component } from 'react'
 import {
   StyleSheet,
@@ -10,6 +15,10 @@ import FadingSlides from 'react-native-fading-slides'
 
 import Fondo from '../../assets/imagenes/fondo.jpg'
 
+
+/**
+ * Constantes para crear los diferentes slides del Fading Slides
+ */
 const slides = [
   {
     image: require('../../assets/pp1.jpeg'),
@@ -33,8 +42,21 @@ const slides = [
   }
 ]
 
+/**
+ * @class Clase para generar la ventana inicial de la aplicación
+ */
+
 export default class Inicial extends Component {
+  /*signOutUser = () => {
+    firebase.auth().signOut()
+  }*/
+
   render () {
+    /**
+      * ImageBackground:Imagen de fondo en la ventana
+      * Fading Slides: Crea un elemento como presentación de power point, similar a un carrusel
+      * TouchableOpacity: Botón
+      */
     return (
       <ImageBackground source={Fondo} style={styles.imageBack}>
         <View paddingTop={320}>
@@ -48,7 +70,7 @@ export default class Inicial extends Component {
           />
           <TouchableOpacity
             style={styles.button}
-            onPress={() => this.props.navigation.navigate('Registrar')}
+            onPress={() => this.props.navigation.navigate('Registrar') }
           >
             <Text style={{ color: 'gray', fontWeight: '500' }}> Ingresar </Text>
           </TouchableOpacity>
@@ -57,7 +79,10 @@ export default class Inicial extends Component {
     )
   }
 }
-
+//
+/**
+ * Estilos para darle formato a la ventana
+ */
 const styles = StyleSheet.create({
   imageBack: {
     width: '100%',

@@ -1,3 +1,8 @@
+/**
+ * @author Jairo Ortega Calderón
+ * @version 1.0
+ * @date 21-11-2019
+ */
 import React, { Component } from 'react'
 import {
   StyleSheet,
@@ -16,6 +21,9 @@ import Icono2 from '../../assets/lottery.png'
 import Icono3 from '../../assets/perfil.png'
 import Icono4 from '../../assets/exit.png'
 
+/**
+ * @class Clase para generar la ventana de los puntos de venta
+ */
 export default class PuntosVenta extends Component {
   constructor () {
     super()
@@ -23,11 +31,14 @@ export default class PuntosVenta extends Component {
       dataSource: {}
     }
   }
-
+  
+  /**
+   * Método salir de Firebase
+   */
   signOutUser = () => {
     firebase.auth().signOut()
   }
-
+  //Método para montar externos
   componentDidMount () {
     var that = this
     let items = Array.apply(null, Array(1)).map((v, i) => {
@@ -39,6 +50,10 @@ export default class PuntosVenta extends Component {
     })
   }
   render () {
+    /**
+      * ImageBackground:Imagen de fondo en la ventana
+      * FlatList: Crea un elemento "Matriz" para insertar los puntos de venta bloqueados y desbloqueados 
+      */
     return (
       <ImageBackground source={Fondo} style={styles.imageBack}>
         <View style={styles.MainContainer}>
@@ -104,7 +119,9 @@ export default class PuntosVenta extends Component {
     )
   }
 }
-
+/**
+ * Estilos para darle formato a la ventana
+ */
 const styles = StyleSheet.create({
   MainContainer: {
     justifyContent: 'center',
