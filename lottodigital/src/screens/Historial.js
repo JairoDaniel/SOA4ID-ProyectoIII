@@ -60,9 +60,9 @@ export default class Historial extends React.Component {
                 <Text style={styles.paragraph}>
                   <Image
                     style={styles.logo}
-                    source={require('../../assets/lottery.png')}
+                    source={require('../../assets/money.jpg')}
                   />{' '}
-                  19/11/2019-19:00 -> Nacional: ₡500 al 98
+                  Local 6: Recarga ₡2000
                 </Text>
                 <Text style={styles.paragraph}>
                   <Image
@@ -74,9 +74,9 @@ export default class Historial extends React.Component {
                 <Text style={styles.paragraph}>
                   <Image
                     style={styles.logo}
-                    source={require('../../assets/lottery.png')}
+                    source={require('../../assets/deal.png')}
                   />{' '}
-                  19/11/2019-19:00 -> Nacional: ₡500 al 98
+                  Has ganado el 20/11/2019-13:00 con la Panameña: ₡500 al 68
                 </Text>
                 <Text style={styles.paragraph}>
                   <Image
